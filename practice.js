@@ -22,14 +22,14 @@ function updateExpenseList() {
     expenseList.innerHTML = '';
     expenses.forEach((expense, index) => {
         const li = document.createElement('li');
-        li.innerHTML = `${expense.amount} - ${expense.category} - ${expense.date} <button onclick="deleteExpense(${index})">Delete</button>`;
+        li.innerHTML = `Rs.{expense.amount} - Rs.{expense.category} - Rs.{expense.date} <button onclick="deleteExpense(Rs.{index})">Delete</button>`;
         expenseList.appendChild(li);
     });
 }
 
 function updateTotalAmount() {
     const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
-    totalAmount.textContent = `Total: $${total.toFixed(2)}`;
+    totalAmount.textContent = `Total: Rs.{total.toFixed(2)}`;
 }
 
 function deleteExpense(index) {
