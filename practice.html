@@ -1,23 +1,23 @@
-<!doctype html>
-<html>
-    <head>
-        <title>
-            Expense App
-        </title>
-    <style>
-        
-    </style>
-    </head>
-    <body>
-        <link rel="stylesheet" href="C:\Users\Khushboo\practice\html practice\practice.css" >
-       <h1 class="a" id="1">Expense App</h1>
-       <h2 class="b" id="2">New Expense</h2>
-       <div>
-           <span class="e" id="6"> Expense 1<button class="c" id="3"><img src="C:\Users\Khushboo\Downloads\edit image.png">
-            </button><button class="d" id="4"><img src="C:\Users\Khushboo\Downloads\delete image.png"></button></span><br><br>
-            <span class="f" id="7">Expense 2<button class="c" id="3"><img src="C:\Users\Khushboo\Downloads\edit image.png">
-            </button><button class="d" id="5"><img src="C:\Users\Khushboo\Downloads\delete image.png"></button></span>
-            <br><br><button class="g" id="7">Add Expense</button><button class="h" id="8">Delete List</button>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    <form id="expense-form">
+        <input type="number" id="amount" placeholder="Amount" required>
+        <input type="text" id="category" placeholder="Category" required>
+        <input type="date" id="date" required>
+        <textarea id="note" placeholder="Note"></textarea>
+        <button type="submit">Add Expense</button>
+    </form>
+    <h2>Expenses</h2>
+    <ul id="expense-list"></ul>
+    <h3 id="total-amount">Total: $0</h3>
+    <script src="script.js"></script>
+</body>
 </html>
