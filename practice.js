@@ -1,39 +1,31 @@
-const expenseForm = document.getElementById('expense-form');
-const expenseList = document.getElementById('expense-list');
-const totalAmount = document.getElementById('total-amount');
-let expenses = [];
-
-expenseForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const amount = parseFloat(document.getElementById('amount').value);
-    const category = document.getElementById('category').value;
-    const date = document.getElementById('date').value;
-    const note = document.getElementById('note').value;
-
-    const expense = { amount, category, date, note };
-    expenses.push(expense);
-    updateExpenseList();
-    updateTotalAmount();
-    expenseForm.reset();
+const but = document.querySelector('button');
+const bod = document.querySelector('body');
+let count = 0;
+but.addEventListener('click',function ()
+{
+    event.preventDefault()
+    const inr = document.querySelector('#amount').value;
+    const type = document.querySelector('#type').value;
+    const desc = document.querySelector('#decription').value;
+    if(inr>=0 && type.length>0)
+    {
+        const newElement = `<div>Amount = ${inr}, Type: ${type}, Description: ${desc}</div>`;
+        if(count == 0)
+        {
+            document.querySelector('#container').innerHTML = newElement;
+            count++;
+        }
+        else
+        {
+            document.querySelector('#container').innerHTML += newElement;
+            count++;
+        }
+        const formm = document.querySelector('form');
+        formm.reset();
+    }
+    else
+    {
+        alert('Invalid Number or empty type');
+    }
 });
 
-function updateExpenseList() {
-    expenseList.innerHTML = '';
-    expenses.forEach((expense, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `Rs.{expense.amount} - Rs.{expense.category} - Rs.{expense.date} <button onclick="deleteExpense(Rs.{index})">Delete</button>`;
-        expenseList.appendChild(li);
-    });
-}
-
-function updateTotalAmount() {
-    const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
-    totalAmount.textContent = `Total: Rs.{total.toFixed(2)}`;
-}
-
-function deleteExpense(index) {
-    expenses.splice(index, 1);
-    updateExpenseList();
-    updateTotalAmount();
-}
