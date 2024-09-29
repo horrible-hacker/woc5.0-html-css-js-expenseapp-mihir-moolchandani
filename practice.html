@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Expense Tracker</title>
-    <link rel="stylesheet" href="practice.css">
-</head>
-<body>
-    <h1>Expense Tracker</h1>
-    <form id="expense-form">
-        <input type="number" id="amount" placeholder="Amount" required>
-        <input type="text" id="category" placeholder="Category" required>
-        <input type="date" id="date" required>
-        <textarea id="note" placeholder="Note"></textarea>
-        <button type="submit">Add Expense</button>
-    </form>
-    <h2>Expenses</h2>
-    <ul id="expense-list"></ul>
-    <h3 id="total-amount">Total: Rs.0</h3>
-    <script src="practice.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="practice.css" />
+   
+    <title>Expense Record</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Expense Record</h1>
+      <form>
+        <p><label>Amount (in INR) : </label><input type="number" id="amount" /></p>
+        <p><label>Expense Type: </label><input type="text" id="type" /></p>
+        <p><label>Expense Description: </label><input type="text" id="decription" /></p>
+        <button id = "add">Add</button>
+      </form>
+      <div id ="container">
+        no content found
+      </div>
+    </div>
+  </body>
+  <script src="practice.js"></script>
 </html>
